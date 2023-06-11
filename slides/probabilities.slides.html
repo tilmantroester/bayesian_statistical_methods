@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Introduction slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>probabilities slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
@@ -15149,13 +15149,94 @@ div.jp-OutputPrompt {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div class="reveal">
-<div class="slides"><section ><section >
+<div class="slides"><section ><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_remove-input">
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output " data-mime-type="text/markdown">
+<h1 id="Probabilities">Probabilities<a class="anchor-link" href="#Probabilities">&#182;</a></h1>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output " data-mime-type="text/markdown">
+<!-- Define LaTeX macros -->
+<p>$\def\E{\operatorname{E}}$
+$\def\Var{\operatorname{Var}}$
+$\def\Cov{\operatorname{Cov}}$
+$\def\dd{\mathrm{d}}$
+$\def\ee{\mathrm{e}}$
+$\def\Norm{\mathcal{N}}$
+$\def\Uniform{\mathcal{U}}$</p>
+<!-- MathJax needs them to be defined again for the non-inline environment -->
+$$\def\E{\operatorname{E}}$$$$\def\Var{\operatorname{Var}}$$$$\def\Cov{\operatorname{Cov}}$$$$\def\dd{\mathrm{d}}$$$$\def\ee{\mathrm{e}}$$$$\def\Norm{\mathcal{N}}$$$$\def\Uniform{\mathcal{U}}$$
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
 <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Bayesian-Statistical-Methods-and-Data-Analysis">Bayesian Statistical Methods and Data Analysis<a class="anchor-link" href="#Bayesian-Statistical-Methods-and-Data-Analysis">&#182;</a></h1>
+<h2 id="Outline">Outline<a class="anchor-link" href="#Outline">&#182;</a></h2><ul>
+<li>What are probabilities?</li>
+<li>Notation and basic concepts<ul>
+<li>Sets</li>
+<li>Outcomes, events</li>
+<li>Probabilities<ul>
+<li>Addition and multiplication</li>
+<li>Independence, conditional</li>
+<li>Bayes' theorem</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Exercises<ul>
+<li>Birthday problem</li>
+<li>Monty Hall problem</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="What-are-probabilities?">What are probabilities?<a class="anchor-link" href="#What-are-probabilities?">&#182;</a></h2><ul>
+<li><p>Probability as frequency of outcome of events:</p>
+<ul>
+<li>In this way of thinking about probabilities we look at the number of times a given event happens over a large number of tries.</li>
+<li>It is difficult to define consistently however, without running into circular reasoning.</li>
+</ul>
+</li>
+<li><p>Probability as degree of belief:</p>
+<ul>
+<li>Subjective probability is associated with personal judgements about how likely something is to happen.</li>
+<li>For example, 'I believe that team X will beat team Y, because teams Y's star player has an injury, while team X has been training really hard.' Such statements can be made even if teams X and Y have never played each other.</li>
+<li>By requiring that two people arrive at the same conclusion if given the same assumptions and data, this definition of probability can be formalised into a mathematical system equivalent to the other definitions.</li>
+</ul>
+</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -15166,11 +15247,14 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Introductions</li>
-<li>Logistics</li>
-<li>Structure of the course</li>
-<li>Intro to Python and JupyterHub</li>
+<li>Probably derived from axioms:<ul>
+<li>Probability is a measure that satisfies a set of axioms derived from logic and set theory, such as the Kolmogorov or Cox axioms.</li>
+<li>This sidesteps the frequentist vs Bayesian interpretation by sticking to purely mathematical concepts.</li>
 </ul>
+</li>
+</ul>
+<p>In this course we start out with this definition. 
+In general we will follow the Bayesian degree-of-believe way of thinking about probability.</p>
 
 </div>
 </div>
@@ -15181,18 +15265,18 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Introductions">Introductions<a class="anchor-link" href="#Introductions">&#182;</a></h2>
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Logistics">Logistics<a class="anchor-link" href="#Logistics">&#182;</a></h2><p>Slides and notebooks available on Moodle and <a href="https://github.com/tilmantroester/bayesian_statistical_methods/tree/fs2023">github</a>.</p>
-<p>Attendance is not required but strongly recommended. I will try to keep a zoom connection open but the plan is to keep the course interactive with a lot of hands-on practice, so attending remotely (or not at all) will probably not be as useful.</p>
+<h2 id="Notation-and-basic-concepts">Notation and basic concepts<a class="anchor-link" href="#Notation-and-basic-concepts">&#182;</a></h2><h3 id="Set-notation">Set notation<a class="anchor-link" href="#Set-notation">&#182;</a></h3><ul>
+<li><p>A set is a collection of elements, e.g.: $A = \{1, 2, 3\}$</p>
+</li>
+<li><p>$e \in A$ means $e$ is a member of the set $A$, e.g.: $1 \in \{1, 2, 3\}$</p>
+</li>
+<li><p>A set can also be represented by a rule: $\{x|x ~{\rm follows ~a ~rule} \}$</p>
+<p>For example, the set $E$ of even integers: $E = \{x| x=2y,\, y \in \mathbb{Z} \}$</p>
+</li>
+<li><p>Set inclusion ($\subseteq$). A is included in B (or is a subset of B) if all the elements of A are also elements of B.</p>
+<p>For example: $\{ 1, 2 \} \subseteq \{1, 2, 3\}$</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -15203,26 +15287,50 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Grades">Grades<a class="anchor-link" href="#Grades">&#182;</a></h3><p>If you want credit points, the grade is going to be based on a small research project &amp; report.</p>
+<h4 id="Set-operators">Set operators<a class="anchor-link" href="#Set-operators">&#182;</a></h4><p>Let $A = \{1, 3, 5\}$; $B = \{ 2, 3, 4\}$</p>
 <ul>
-<li>The project should either cover a data analysis or the theory behind a statistical tool.<ul>
-<li>This can be one of the project ideas I will suggest throughout the course or some data or algorithm you find interesting and want to explore more, for example from your own research.</li>
-</ul>
+<li><p><strong>Union $\cup$</strong>
+  All elements of A and all elements of B
+  $A \cup B = \{1, 2, 3, 4, 5\}$</p>
 </li>
-<li>Format: like a journal article (specifically a Letter):<ul>
-<li>Professional presentation, i.e. using LaTeX, nice plots</li>
-<li>Proper references and appropriate structure</li>
-<li>Page limit of 5</li>
-</ul>
+<li><p><strong>Intersection $\cap$</strong>:
+  Elements that are in both A and B</p>
+<p>$A \cap B = \{3\} $</p>
 </li>
-<li>Group work is allowed. Conditions:<ul>
-<li>Everyone in the group gets the same grade</li>
-<li>Everyone needs to contribute to both the report and the analysis</li>
-<li>The report needs to include a contribution statement that briefly describes what each member has done</li>
-</ul>
+<li><p><strong>Difference $\setminus$</strong>
+  Elements that are in A but not in B</p>
+<p>$A \setminus B = \{1, 5\}$</p>
+<p>$B \setminus A = \{2, 4 \}$</p>
+</li>
+<li><p><strong>Complement</strong>:</p>
+<p>The complemnet of A in reference to $\Omega$ includes all elements in $\Omega$ that are not in A. 
+  For the die example $\Omega = \{1, 2, 3, 4, 5, 6\}$,</p>
+<p>$A^c = \{ 2, 4, 6 \}$ or</p>
+<p>$A^c = \{\omega:\omega \in \Omega ~{\rm and}~ \omega\not\in A\}$</p>
 </li>
 </ul>
-<p>Deadline is 2023/07/21.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><p><strong>Empty set $\varnothing$</strong></p>
+<p>The empty set, $\varnothing$, is the complement of the universal set:</p>
+<p>$\Omega^c = \varnothing$ and $\varnothing^c = \Omega$.</p>
+<p>This means, $A\cup \varnothing = A$ and $A\cap\varnothing = \varnothing$.</p>
+</li>
+<li><p><strong>Power set</strong></p>
+<p>Collection of all possible sets of a given set</p>
+<p>$A = \{1, 3, 5\}$</p>
+<p>$\mathcal P(A) = \left\{\varnothing,\{ 1\},\{3 \},\{5 \},\{1, 3 \},\{1, 5 \},\{3, 5 \}, \{1, 3, 5\} \right\}$</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -15233,9 +15341,103 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Structure-of-the-course">Structure of the course<a class="anchor-link" href="#Structure-of-the-course">&#182;</a></h2><ul>
-<li>Lesson, work on exercises, discuss solutions</li>
-<li>To get most out of the course, have a look at the material and exercises <strong>before</strong> the lecture</li>
+<h2 id="Outcomes,-events,-probability">Outcomes, events, probability<a class="anchor-link" href="#Outcomes,-events,-probability">&#182;</a></h2><h3 id="Outcomes-and-sample-space">Outcomes and sample space<a class="anchor-link" href="#Outcomes-and-sample-space">&#182;</a></h3><p>The outcomes $\omega$ of an experiment are elements of the set of all possible outcomes, called the sample space $\Omega$.</p>
+<p>Consider the experiment of tossing a (fair) coin twice:</p>
+<ul>
+<li>$\omega=\text{HH}$ (&quot;two heads&quot;)</li>
+<li>$\omega \in \Omega=\{\text{HH}, \text{HT}, \text{TH}, \text{TT}\}$</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Events-and-event-space">Events and event space<a class="anchor-link" href="#Events-and-event-space">&#182;</a></h3><p>An event $F$ is a set of outcomes</p>
+<ul>
+<li>$F=\{\text{HH}, \text{HT}, \text{TH}\}$ (&quot;at least one head&quot;)</li>
+</ul>
+<p>Events are elements of the event space $\mathcal{F}$: the power set the sample space (the set of all possible outcomes)</p>
+<p>Note that $\Omega$ and $\mathcal{F}$ are not the same. The sample space contains the basic outcomes and event space contains sets of outcomes.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Probability">Probability<a class="anchor-link" href="#Probability">&#182;</a></h3><p>The probability function $P$ assigns a probability (a number between 0 and 1) to events</p>
+<ul>
+<li>$F=\{\text{HH}, \text{HT}, \text{TH}\}$</li>
+<li>$\Pr(F) = \frac{3}{4}$</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Kolmogorov's-axioms-of-probability">Kolmogorov's axioms of probability<a class="anchor-link" href="#Kolmogorov's-axioms-of-probability">&#182;</a></h3><ul>
+<li><p>The probability measure of events is a real number equal or larger than 1:</p>
+<p>$0 \le \Pr(A)$</p>
+</li>
+<li><p>The probability measure of the universal set is 1.</p>
+<p>$\Pr(\Omega) = 1$</p>
+</li>
+<li><p>If the sets $A_1$, $A_2$, $A_3$ ... $\in \mathcal{F}$ are disjoint, then</p>
+<p>$\Pr(A_1 \cup A_2 \cup ...) = \Pr(A_1) + \Pr(A_2) + ...$</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Consequences-of-the-axioms-of-probability">Consequences of the axioms of probability<a class="anchor-link" href="#Consequences-of-the-axioms-of-probability">&#182;</a></h3><ul>
+<li><p>Numeric bound:</p>
+<p>$0 \leq \Pr(A) \leq 1$</p>
+</li>
+<li><p>Monoticity:</p>
+<p>$A\subseteq B$ then $\Pr(A) \leq \Pr(B)$</p>
+</li>
+<li><p>Complement rule:</p>
+<p>$\Pr(A^c) = 1 - \Pr(A)$</p>
+</li>
+<li><p>Sum rule:</p>
+<p>$\Pr(A \cup B) = \Pr(A) + \Pr(B) - \Pr(A \cap B)$</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Example, a single fair die:</p>
+<ul>
+<li>$\Omega = \{1,2,3,4,5,6\}$</li>
+<li>$\Pr(F) = \frac{1}{6}\quad \forall F \in \Omega$</li>
+<li>Events $A = \{1, 3\}$ and $B = \{1,2,3,4\}$</li>
 </ul>
 
 </div>
@@ -15248,27 +15450,15 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Working in teams is encouraged</li>
-<li>Be ready for Clicker questions</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment" >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Feedback is always welcome!<ul>
-<li>EduApp: Course channel &quot;Feedback&quot;</li>
-<li>Anonymous Google form (link on Moodle)</li>
-<li>Email</li>
-<li>In-person</li>
-<li>Official course evaluation on the last day of the course: Friday 23.06 at 17:00</li>
-</ul>
+<li><p>Monoticity:</p>
+<p>$A\subseteq B$, $\Pr(A)=\frac{1}{3} \leq \Pr(B)=\frac{2}{3}$</p>
+</li>
+<li><p>Complement rule:</p>
+<p>$\Pr(A^c) = \Pr(\{2,4,5,6\}) = \frac{2}{3} = 1 - \Pr(A)$</p>
+</li>
+<li><p>Sum rule:</p>
+<p>$\Pr(A \cup B) = \Pr(\{1,2,3,4\}) = \frac{2}{3}$</p>
+<p>$\Pr(A \cup B) = \Pr(A) + \Pr(B) - \Pr(A \cap B) = \frac{1}{3} + \frac{2}{3} - \Pr(\{1, 3\}) = \frac{2}{3}$</p>
 </li>
 </ul>
 
@@ -15281,7 +15471,10 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="What-is-this-course-about?">What is this course about?<a class="anchor-link" href="#What-is-this-course-about?">&#182;</a></h2>
+<h2 id="Conditional-probabilities-and-independence">Conditional probabilities and independence<a class="anchor-link" href="#Conditional-probabilities-and-independence">&#182;</a></h2><h3 id="Conditional-probabilities">Conditional probabilities<a class="anchor-link" href="#Conditional-probabilities">&#182;</a></h3><p>The conditional probability of event A happening, given that event B happened, is</p>
+<p>$\Pr(A|B) = \frac{\Pr(A\cap B)}{\Pr(B)}$</p>
+<p>Instead of the Kolmogorov axioms, probability theory can also be defined in terms of conditional probabilities, using the Cox axioms.</p>
+
 </div>
 </div>
 </div>
@@ -15291,7 +15484,87 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Statistical-inference">Statistical inference<a class="anchor-link" href="#Statistical-inference">&#182;</a></h3><p>Statistical inference is concerned with drawing conclusions from data about quantities that are not observed.</p>
+<h3 id="Independence">Independence<a class="anchor-link" href="#Independence">&#182;</a></h3><p>If A is independent of B, $\Pr(A|B) = \Pr(A)$: the conditional probability of A given B does not depend on B. From this follows that</p>
+<p>$\Pr(A\cap B) = \Pr(A)\Pr(B)$</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Law-of-total-probability">Law of total probability<a class="anchor-link" href="#Law-of-total-probability">&#182;</a></h3><p>Let $\{H_1, H_2, ... \}$ be a countable collection of sets which is a partition of $\Omega$, where</p>
+<p>$H_i \cap H_j = \varnothing$ for $i \ne j$</p>
+<p>$H_1 \cup H_2 \cup ... = \Omega$</p>
+<p>The probability of an event $D$ can be calculated as</p>
+<p>$\Pr(D) = \Pr(D \cap H_1) + \Pr(D \cap H_2) + ... $</p>
+<p>or in terms of conditional probabilities</p>
+<p>$\Pr(D) = \Pr(D | H_1)\Pr(H_1) + \Pr(D | H_2)\Pr(H_2) + ... $</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Bayes'-theorem">Bayes' theorem<a class="anchor-link" href="#Bayes'-theorem">&#182;</a></h3><p>Applying the definition of the conditional probability twice we get Bayes' theorem:</p>
+<p>$ \Pr(A|B) = \frac{\Pr(A\cap B)}{\Pr(B)} = \frac{\Pr(B|A)\Pr(A)}{\Pr(B)}$</p>
+<p>Named after Thomas Bayes, British clergyman, 1702-1761</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Example:-a-test-for-rare-events">Example: a test for rare events<a class="anchor-link" href="#Example:-a-test-for-rare-events">&#182;</a></h4><p>Let us assume there is a rare disease that affects 0.1% of the population. 
+There is a test that can detect this disease. It has a detection efficiency of 99% and a probability of error (false-positive) of 2%. 
+What is the probability of having the disease when receiving a positive test?</p>
+<p>$\Pr(D | +) = \frac{\Pr(+ | D)\Pr(D)}{\Pr(+)} = \frac{\Pr(+ | D)\Pr(D)}{\Pr(+ | D)\Pr(D) + \Pr(+ | D^c)\Pr(D^c)}$</p>
+<ul>
+<li>$\Pr(+ | D) = 0.99$: probability of a postive test result, given the disease is present (detection efficiency of 99%)</li>
+<li>$\Pr(D) = 0.001$: the disease affects 0.1% of the population</li>
+<li>$\Pr(+ | D^c) = 0.02$: probability of a postive test result, given the disease is not present (false-positive rate of 2%)</li>
+</ul>
+<p>$\Pr(D | +) = \frac{0.99 \cdot 0.001}{0.99 \cdot 0.001 + 0.02 \cdot 0.999} = 0.047$</p>
+<p>The disease is only present in 5% of the cases where the test is positive!</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><h3 id="Birthday-problem">Birthday problem<a class="anchor-link" href="#Birthday-problem">&#182;</a></h3><p>What is the probability of two people in this room sharing a birthday?</p>
+<p>Find the probability of the event $B_n$, that two people out of $n$ share a birthday?</p>
+<p>Assume that birthdays are independent, equally likely to happend throughout the year, and the year having 365 days.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Monty-Hall-problem">Monty Hall problem<a class="anchor-link" href="#Monty-Hall-problem">&#182;</a></h3><p>In a game show the contestant is presented with three doors. Behind one door is a car and behind the two others are goats. 
+The goal is to win the car by choosing the door with the car.</p>
+<p>The contestant chooses a door (but the door remains closed for now). The host (who know behind which door the car is) then opens one of the two other doors and reveals a goat. 
+The contestant can now choose whether to stick with their original choice of door or switch their choice to the other remaining closed door.</p>
+<p>What is the best strategy here? What is the probability of winning the car when sticking with their original choice? What is the probability if they were to change their choice?</p>
 
 </div>
 </div>
@@ -15302,294 +15575,17 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Bayesian-data-analysis">Bayesian data analysis<a class="anchor-link" href="#Bayesian-data-analysis">&#182;</a></h3><p>The core of Bayesian data analyses is coming up with a probabilistic model of the world. 
-These models describe both the observable and unobservable quantities of a problem in probabilistic terms.</p>
-<p>By conditioning the probabilistic model on the observed data, we then obtain the probability distribution of the unobserved quantity of interest: the posterior distribution.</p>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment" >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Computational-statistics">Computational statistics<a class="anchor-link" href="#Computational-statistics">&#182;</a></h3><p>Outside of simple models and special cases, our models will likely rely on numerical methods. 
-This is especially the case in Bayesian data analysis, where drawing samples from complex distributions is often a key part of the analysis.</p>
-
-</div>
-</div>
-</div>
-</div></div></section></section><section ><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Python,-Jupyter-notebooks,-and-JupyterLab">Python, Jupyter notebooks, and JupyterLab<a class="anchor-link" href="#Python,-Jupyter-notebooks,-and-JupyterLab">&#182;</a></h2><p>The course focusses on computational methods to do data analysis with Bayesian statistics.</p>
-<p>We will be using Python. There are other options, such as R and Julia, but once the models become more complex, Python has a much larger ecosystem available. 
-For example astrophysics software or deep learning libraries.</p>
-
-</div>
-</div>
-</div>
-</div><div class="fragment" >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Jupyter-notebooks">Jupyter notebooks<a class="anchor-link" href="#Jupyter-notebooks">&#182;</a></h3><p>A key part of a statistical analysis is understanding your data.
-Data exploration and visualisation is made easy by using Jupyter notebooks, which allow combining code, visualisations, and documentation in one place.</p>
-<p>They are not good for complex modelling however. Once your code goes beyond some simple data analysis and plotting, splitting the modelling code into standalone modules and packages makes things more robust and maintainable.</p>
-
-</div>
-</div>
-</div>
-</div></div></section><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="JupyterLab">JupyterLab<a class="anchor-link" href="#JupyterLab">&#182;</a></h3><p><a href="https://jupyterlab.readthedocs.io">JupyterLab</a> is an environment that centres around editing notebooks in your browser but can do a lot more as well. For example, it provides debugging and version control interfaces, access to a terminal, etc.</p>
-<p>ETH provides an instance of JupyterLab for everyone in the course. 
-This is an online development environment and comes with all the necessary packages installed. 
-Changes you make will persist throughout the course. 
-If you set up version control, it is easy to synchronise your on the JupyterLab instance with a local copy on your own device.</p>
-<p>You are free to use your own setup as well.</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Useful-extensions">Useful extensions<a class="anchor-link" href="#Useful-extensions">&#182;</a></h3><p>Two very useful JupyterLab extensions are enabled on the ETH instance: debugging and version control with git</p>
-
-</div>
-</div>
-</div>
-</div><div class="fragment" >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Debugging">Debugging<a class="anchor-link" href="#Debugging">&#182;</a></h4><p>Any code ever written has bugs. Do not trust anyone that claims their code does not contain bugs. That includes yourself!</p>
-<p>A common approach to debugging is the sprinkle <code>print</code> statements throughout the code and try to figure out when something does not work as it should.</p>
-<p>What are some reasons why this approach might be sub optimal?</p>
-
-</div>
-</div>
-</div>
-</div></div></section><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The alternative is using a debugger.</p>
-<p>A debugger allows to</p>
+<p>Find the probabilities $\Pr(C_1 | H_3)$ and $\Pr(C_2 | H_3)$ of the car being behind door 1 or 2, given that the host has opened door 3.</p>
 <ul>
-<li>Step through a program line-by-line</li>
-<li>Set breakpoints, so the execution automatically pauses when reaching the breakpoint</li>
-<li>Inspect the values of variables while the program is running and evaluate expressions based on them</li>
+<li>Simulate the game to find these probabilities</li>
+<li>Find the probabilities by using the expression for conditional probabilities and Bayes' theorem</li>
 </ul>
-<p>One of the biggest downsides to using debugger used to be the set up. But JupyterLab allows <a href="https://jupyterlab.readthedocs.io/en/latest/user/debugger.html">debugging</a> of notebook cells, without having to setup <code>pdb</code>, <code>gdb</code>, etc.</p>
-<p>Debuggers built into other tools, such as <a href="https://code.visualstudio.com/">VS Code</a>, are even more powerful, with features such as <a href="https://code.visualstudio.com/Docs/editor/debugging#_advanced-breakpoint-topics">conditional breakpoints</a>.</p>
+<p>You are free to start with either task.</p>
 
 </div>
 </div>
 </div>
-</div></section><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../assets/jupyterlab_debug_annotated.png" alt="jupyterlab debugger" /></p>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Version-control">Version control<a class="anchor-link" href="#Version-control">&#182;</a></h4><p>If you are already familiar with version control and git, great! If not and your version control looks something like</p>
-<ul>
-<li><code>my_great_research_project.py</code></li>
-<li><code>my_great_research_project_ver2.py</code></li>
-<li><code>my_great_research_project_ver3.py</code></li>
-<li><code>my_great_research_project_final.py</code></li>
-<li><code>my_great_research_project_really_final.py</code></li>
-<li><code>my_great_research_project_really_really_final.py</code></li>
-</ul>
-<p>I suggest <a href="https://learn.microsoft.com/en-us/training/paths/intro-to-vc-git/">this introduction</a>. Knowing how to use version control like git is essential if you work on code (or reports) together with other people.</p>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To use git on JupyterLab you can use either the command line interface by opening a terminal or the graphical interface provided by JupyterLab:</p>
-<ul>
-<li>Clone an existing repository:<ol>
-<li>Create a repository on your provider of choice (github, gitlab, bitbucket, etc)</li>
-<li>On JupyterLab, <code>Git-&gt;Clone a Repository</code>.</li>
-</ol>
-</li>
-<li>Initialise an empty repository on JupyterLab:<ol>
-<li><code>Git-&gt;Initialize a Repository</code></li>
-<li>If you want to synchronise with a repository outside of JupyterLab, add the remote: <code>Git-&gt;Manage Remote Repositories</code></li>
-</ol>
-</li>
-</ul>
-<p>Once the repository is set up on JupyterLab, you can add files by right-clicking on it and selecting <code>Git-&gt;Add</code> from the context menu.</p>
-<p>Opening the git pane on the left allows you to see the files with changes, look at the diffs, stage/unstage files, and commit the changes.</p>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../assets/jupyterlab_git_annotated.png" alt="git interface" /></p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h3><ol>
-<li>Create a new directory at the top of the JupyterLab file system</li>
-<li>Create a new Python notebook</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div><div class="fragment" >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol start="3">
-<li>Obtain an estimate the value of $\pi$<ul>
-<li>From the definition in <code>numpy</code></li>
-<li>Using the series $\pi = 4 \sum_{k=0}^\infty \frac{(-1)^{k}}{2k + 1}$</li>
-<li>Using a Monte-Carlo estimate:<ol>
-<li>Sample $n$ points uniformly on the unit square using <code>numpy.random.uniform</code></li>
-<li>Count the number $n_r$ of points with distance $r = \sqrt{x^2+y^2} \leq 1$</li>
-<li>Compare the fraction $\frac{n_r}{n}$ to the ratio of the area of a quadrant of a disc to the area of the square to derive an estimate of $\pi$</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment" >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol start="4">
-<li><p>Use the debugger to step through some iterations of your code.</p>
-</li>
-<li><p>Create plots showing the estimated value as the number of terms in the series expansion and the number of Monte-Carlo samples is varied</p>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div></div></section></section><section ><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Your-python-package">Your python package<a class="anchor-link" href="#Your-python-package">&#182;</a></h2><p>The goal of this course is for you to build a toolbox with statistical and computational methods that you can use in your future data analyses.</p>
-<p>For that toolbox to be useful it needs to contain reusable code. Notebooks are great for quick development and data exploration but terrible for reusable and maintainable code. 
-As soon as you think about copy &amp; pasting some piece of code from one notebook to another (or within the same notebook), you should instead consider putting that piece of code into your toolbox.</p>
-<p>This toolbox can be made into a python package, so that you can import it where ever you need it.</p>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For example, under <code>course_tools</code> in the course repository is a small python package with some helper functions, for example for creating the slides.</p>
-<p>The package can be installed from the <code>course_tools</code> directory by calling <code>pip install --user --editable .</code></p>
-<p>I can then <code>import</code> the package like any other python package and use it</p>
-
-</div>
-</div>
-</div>
-</div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">bayesian_stats_course_tools</span>
-<span class="n">bayesian_stats_course_tools</span><span class="o">.</span><span class="n">misc</span><span class="o">.</span><span class="n">load_tex_defs</span><span class="p">()</span>
-
-<span class="kn">import</span> <span class="nn">matplotlib.style</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;bayesian_stats_course_tools.light&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></div></section><section >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To create your own package, have a look at the example in <code>course_tools</code> and the documentation at <a href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">https://packaging.python.org/en/latest/tutorials/packaging-projects/</a>.</p>
-<p>The key files are</p>
-<ul>
-<li>The <code>pyproject.toml</code> file, which specifies that this is a python package</li>
-<li>The <code>src/bayesian_stats_course_tools/__init__.py</code>, which makes <code>bayesian_stats_course_tools</code> a python module that can be imported.</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section></section>
+</div></div></section></section>
 </div>
 </div>
 </body>
