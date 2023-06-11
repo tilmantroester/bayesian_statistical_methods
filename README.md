@@ -21,7 +21,7 @@ The course focusses mostly on showing how to use statistical tools, rather than 
 If you are seeing this notebook in the course JupyterLab, you are probably in the directory with the course materials.
 
 <!-- ![](jupyterlab_landing.png) -->
-<img src="jupyterlab_landing.png" height="200">
+<img src="assets/jupyterlab_landing.png" height="200">
 
 ## On your own device
 
