@@ -8,6 +8,7 @@ jupyter nbconvert $1 \
 --SlidesExporter.mathjax_url=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js \
 --SlidesExporter.reveal_number="c" \
 --SlidesExporter.reveal_theme="white" \
+--SlidesExporter.reveal_scroll=True \
 --TagRemovePreprocessor.remove_cell_tags="remove-cell" \
 --TagRemovePreprocessor.remove_all_outputs_tags="remove-output" \
 --TagRemovePreprocessor.remove_input_tags="remove-input"

@@ -1,0 +1,17 @@
+name: stats_course
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - emcee
+  - jax
+  - flax
+  - tinygp
+  - jaxopt
+  - arviz
+  - corner
+  - dynesty

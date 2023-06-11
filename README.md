@@ -2,7 +2,7 @@
 
 ## About this course
 
-The course focusses mostly on showing how to use statistical tools, rather than giving a detailed introduction to probability and statistics. There are many great books and courses on this topic, which I encourage you to look at before the lectures. The resources listed here all are available online, either directly or through the ETH library.
+The course aims to focus mostly on showing how to use statistical tools, rather than giving a detailed introduction to theory behind probability and statistics. There are many great books and courses on this topic, which I encourage you to look at before the lectures. The resources listed here all are available online, either directly or through the ETH library.
 
 - Weighing the odds, a course in probability and statistics, Williams, 2001 [ETH library](https://eth.swisscovery.slsp.ch/permalink/41SLSP_ETH/lshl64/alma99117170967205503). A good introduction to probability theory and statistics with a high level of mathematical rigour.
 - Bayesian Data Analysis, Gelman, 2013 [ETH library](https://eth.swisscovery.slsp.ch/permalink/41SLSP_ETH/lshl64/alma99117222397805503). The title says it all.
@@ -18,11 +18,18 @@ The course focusses mostly on showing how to use statistical tools, rather than 
 
 ## Using JupyterLab
 
-If you are seeing this notebook in the course JupyterLab, you are probably in the directory with the course materials.
+If you are seeing this in the course JupyterLab, you are probably in the directory with the course materials:
 
-<!-- ![](jupyterlab_landing.png) -->
 <img src="assets/jupyterlab_landing.png" height="200">
+
+To make your live easier later on with version control, go up one level in the directory structure and make your own directory for the code you are going to write in this course:
+
+<img src="assets/jupyterlab_toplevel_annotated.png" height="400">
+
+
 
 ## On your own device
 
-Use anaconda. I recommend [mamba](https://mamba.readthedocs.io/en/latest/installation.html#install-script)
+All the materials can be access outside of JupyterLab as well. The repository with the course materials can be found [on github](https://github.com/tilmantroester/bayesian_statistical_methods/tree/fs2023).
+
+To set up your own computing environment I strongly recommend anaconda. Either using [miniconda](https://docs.conda.io/en/latest/miniconda.html) or the much faster [mamba](https://mamba.readthedocs.io/en/latest/installation.html#install-script) implementation.
