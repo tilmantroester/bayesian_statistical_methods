@@ -1,0 +1,23 @@
+
+{%- macro mathjax(url="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js") -%}
+    <!-- Load mathjax -->
+    <script type="text/javascript" id="MathJax-script" async
+        src="{{url}}">
+    </script>
+    <!-- MathJax configuration -->
+    <script id=MathJax-configuration>
+    window.MathJax = {
+        tex: {
+            tags: "ams",
+            useLabelIds: true,
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true,
+        }
+    };
+    </script>
+    <!-- End of mathjax configuration -->
+{%- endmacro %}
+
+

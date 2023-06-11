@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bayesian_stats_course_tools"
+version = "0.0.1"
+authors = [
+    {name = "Tilman Tröster", email = "tilman@troester.space"},
+]
+description = "A collection of helper tools"
+dependencies = [
+    # Add your dependencies here
+    # "numpy"
+]
+
+[tool.setuptools.package-data]
+bayesian_stats_course_tools = ["tex_defs.md", "*.mplstyle"]

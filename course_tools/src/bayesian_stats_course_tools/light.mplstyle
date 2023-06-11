@@ -1,0 +1,24 @@
+font.family : "sans-serif"
+
+text.color : "dimgrey"
+
+figure.dpi : 300
+figure.facecolor : "none"
+
+animation.frame_format : svg
+
+axes.facecolor : "none"
+axes.edgecolor : "dimgrey"
+axes.labelcolor : "dimgrey"
+
+xtick.color : "dimgrey"
+ytick.color : "dimgrey"
+
+patch.edgecolor :  dimgrey
+hatch.color :     dimgrey
+
+boxplot.flierprops.color:           dimgrey
+boxplot.flierprops.markeredgecolor: dimgrey
+boxplot.boxprops.color:     dimgrey
+boxplot.whiskerprops.color:     dimgrey
+boxplot.capprops.color:     dimgrey
