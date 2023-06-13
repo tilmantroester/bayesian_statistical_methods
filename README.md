@@ -13,6 +13,7 @@ The course aims to focus mostly on showing how to use statistical tools, rather 
 
 - `lessons`: The lesson notebooks, which are used to create the slides
 - `slides`: Slides for the lessons
+- `pdf`: PDF versions of the lecture notebooks
 - `exercise_solutions`: Solutions to selected exercises
 - `course_tools`: Tools for creating this course, such as a script to generate the slides from the notebooks and a python package with helper functions.
 
