@@ -40,3 +40,23 @@ np.savetxt(
     np.vstack((x, y, y_err)).T,
     header=f"m={m_true}, b={b_true}, f={f_true}\nx y yerr"
 )
+
+np.random.seed(346)
+
+a_true, b_true, c_true,  = -0.15, 0.7, -0.45
+
+def model(x):
+    return a_true*x**2 + b_true*x + c_true
+
+n = 30
+
+x = np.linspace(0.1, 2.3, n) + np.random.normal(scale=0.02, size=n)
+y_err = 0.04 + np.abs(0.05*np.random.normal(size=n))
+y_sigma = y_err*np.random.normal(size=n)
+y = model(x) + y_sigma
+
+np.savetxt(
+    "data_2.txt",
+    np.vstack((x, y, y_err)).T,
+    header=f"a={a_true}, b={b_true}, c={c_true}\nx y yerr"
+)
