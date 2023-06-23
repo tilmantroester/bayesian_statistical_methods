@@ -8,26 +8,36 @@ import corner
 import matplotlib.pyplot as plt
 
 
-def plot_data(x, y, y_err, models=None):
+def plot_data(x, y, y_err, models=None, subtract_y=None,
+              axis_labels=["$x$", "$y$"], **data_kwargs):
     fig, ax = plt.subplots()
 
-    ax.errorbar(x, y, y_err, fmt=".", label="Data")
+    data_kwargs = {**data_kwargs}
+    if subtract_y is None:
+        subtract_y = np.zeros_like(y)
+    ax.errorbar(x, y-subtract_y, y_err, **data_kwargs, label="Data")
 
     if models is not None:
         for model_def in models:
             if "lower" in model_def:
                 ax.fill_between(
-                    model_def["x"], model_def["lower"], model_def["upper"],
+                    model_def["x"],
+                    model_def["lower"]-subtract_y, model_def["upper"]-subtract_y,
+                    **model_def.get("style", {})
+                )
+            elif "y_err" in model_def:
+                ax.errorbar(
+                    model_def["x"], model_def["y"]-subtract_y, model_def["y_err"],
                     **model_def.get("style", {})
                 )
             else:
                 ax.plot(
-                    model_def["x"], model_def["y"],
+                    model_def["x"], model_def["y"]-subtract_y,
                     **model_def.get("style", {})
                 )
 
-    ax.set_xlabel("$x$")
-    ax.set_ylabel("$y$")
+    ax.set_xlabel(axis_labels[0])
+    ax.set_ylabel(axis_labels[1])
     ax.legend(frameon=False)
 
     return fig, ax
