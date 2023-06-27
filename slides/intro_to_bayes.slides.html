@@ -15579,7 +15579,7 @@ If we assume both models to be equally like apriori, the Bayes ratio is just the
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Fitting-a-line">Fitting a line<a class="anchor-link" href="#Fitting-a-line">&#182;</a></h2><p>To see how all these concepts work a bit more in practice, let us fit a line to some data. 
 For a polemic view on this topic, see <a href="https://arxiv.org/abs/1008.4686">https://arxiv.org/abs/1008.4686</a></p>
-<p>Take a look at the data in <code>lessons/data/linear_fits/data_0.txt</code></p>
+<p>Take a look at the data in <code>lectures/data/linear_fits/data_0.txt</code></p>
 
 </div>
 </div>
@@ -15743,7 +15743,7 @@ jp-needs-light-background
 <p>A first step might be to ask is, what is the most probable set of parameters $(m, b)$ that describe the data?</p>
 <p>For this we need need to find the maximum of the posterior. This is called the maximum a-posteriori (MAP) and is the &quot;best-fit&quot; value:
 $$
-    \theta_\mathrm{MAP} = \mathrm{argmax}_\theta\ p(\theta|d)
+    \theta_\mathrm{MAP} = \underset{\theta}{\mathrm{argmax}}\ p(\theta|d)
 $$</p>
 
 </div>
@@ -16115,7 +16115,7 @@ jp-needs-light-background
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h1><ul>
 <li>Implement your own version of the line-fitting procedure, using the same data.</li>
-<li>Now try it with the data in <code>lessons/data/linear_fits/data_1.txt</code><ul>
+<li>Now try it with the data in <code>lectures/data/linear_fits/data_1.txt</code><ul>
 <li>First plot the data. What has changed?</li>
 <li>Try the same model and likelihood on the new data. You might want to adjust the prior on $m$ and $b$ for this new data set.</li>
 <li>What if you use the provided uncertainty per data point $\sigma_{y_i}$, instead of assuming a constant variance $\sigma_y$ for all data points?</li>
