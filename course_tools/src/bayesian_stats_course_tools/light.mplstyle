@@ -4,6 +4,9 @@ text.color : "dimgrey"
 
 figure.dpi : 300
 figure.facecolor : "none"
+figure.figsize : 7.0, 4.0
+
+legend.frameon : False
 
 animation.frame_format : svg
 

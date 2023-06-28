@@ -7,6 +7,8 @@ figure.facecolor : "none"
 
 animation.frame_format : svg
 
+legend.frameon : False
+
 axes.facecolor : "none"
 axes.edgecolor : "lightgrey"
 axes.labelcolor : "lightgrey"

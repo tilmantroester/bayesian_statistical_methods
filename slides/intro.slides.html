@@ -15125,37 +15125,21 @@ div.jp-OutputPrompt {
 </style>
 
 <!-- Load mathjax -->
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"> </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
     <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    init_mathjax = function() {
-        if (window.MathJax) {
-        // MathJax loaded
-            MathJax.Hub.Config({
-                TeX: {
-                    equationNumbers: {
-                    autoNumber: "AMS",
-                    useLabelIds: true
-                    }
-                },
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-                    processEscapes: true,
-                    processEnvironments: true
-                },
-                displayAlign: 'center',
-                CommonHTML: {
-                    linebreaks: {
-                    automatic: true
-                    }
-                }
-            });
-
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    <script id=MathJax-configuration>
+    window.MathJax = {
+        tex: {
+            tags: "ams",
+            useLabelIds: true,
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true,
         }
-    }
-    init_mathjax();
+    };
     </script>
     <!-- End of mathjax configuration --><!-- Reveal Theme -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/theme/white.css" id="theme">
@@ -15228,10 +15212,11 @@ div.jp-OutputPrompt {
 <li>Format: like a journal article (specifically a Letter):<ul>
 <li>Professional presentation, i.e. using LaTeX, nice plots</li>
 <li>Proper references and appropriate structure</li>
-<li>Page limit of 5</li>
+<li>Page limit of 5 (excluding references)</li>
 </ul>
 </li>
 <li>Group work is allowed. Conditions:<ul>
+<li>Max group size: 4</li>
 <li>Everyone in the group gets the same grade</li>
 <li>Everyone needs to contribute to both the report and the analysis</li>
 <li>The report needs to include a contribution statement that briefly describes what each member has done</li>
@@ -15252,6 +15237,10 @@ div.jp-OutputPrompt {
 <h2 id="Structure-of-the-course">Structure of the course<a class="anchor-link" href="#Structure-of-the-course">&#182;</a></h2><ul>
 <li>Lesson, work on exercises, discuss solutions</li>
 <li>To get most out of the course, have a look at the material and exercises <strong>before</strong> the lecture</li>
+<li>Learning by doing: we will implement many of the basic methods ourselves to get an intuition for how they work<ul>
+<li>After that using well-developed and robust libraries is usually preferable</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -15343,6 +15332,22 @@ This is especially the case in Bayesian data analysis, where drawing samples fro
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Literature">Literature<a class="anchor-link" href="#Literature">&#182;</a></h2><ul>
+<li>Practical Statistics for Astronomers, Wall, 2012 <a href="https://eth.swisscovery.slsp.ch/permalink/41SLSP_ETH/lshl64/alma99117170816205503">ETH library</a>. Short, with a focus on practical applications. Many of the examples and exercises are from astrophysics but are generally applicable, especially for the physical sciences, which often come a bit short in general statistics textbooks. Solutions and data sets are <a href="https://www.astro.ubc.ca/people/jvw/ASTROSTATS/pracstats_web_ed2.html">available online</a>.</li>
+<li>Bayesian Data Analysis, Gelman, 2013 <a href="https://eth.swisscovery.slsp.ch/permalink/41SLSP_ETH/lshl64/alma99117222397805503">ETH library</a>. The title says it all.</li>
+<li>Information Theory, Inference, and Learning Algorithms, MacKay, 2003 <a href="http://www.inference.org.uk/itprnn/book.pdf">Link</a>. Heavy on the information theory but also covers inference methods nicely. The exercises come with solutions.</li>
+<li>Weighing the odds, a course in probability and statistics, Williams, 2001 <a href="https://eth.swisscovery.slsp.ch/permalink/41SLSP_ETH/lshl64/alma99117170967205503">ETH library</a>. A good introduction to probability theory and statistics with a high level of mathematical rigour.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Python,-Jupyter-notebooks,-and-JupyterLab">Python, Jupyter notebooks, and JupyterLab<a class="anchor-link" href="#Python,-Jupyter-notebooks,-and-JupyterLab">&#182;</a></h2><p>The course focusses on computational methods to do data analysis with Bayesian statistics.</p>
 <p>We will be using Python. There are other options, such as R and Julia, but once the models become more complex, Python has a much larger ecosystem available. 
 For example astrophysics software or deep learning libraries.</p>
@@ -15375,6 +15380,32 @@ This is an online development environment and comes with all the necessary packa
 Changes you make will persist throughout the course. 
 If you set up version control, it is easy to synchronise your on the JupyterLab instance with a local copy on your own device.</p>
 <p>You are free to use your own setup as well.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Using-JupyterLab">Using JupyterLab<a class="anchor-link" href="#Using-JupyterLab">&#182;</a></h4><p>If you are seeing this in the course JupyterLab, you are probably in the directory with the course materials:</p>
+<img src="../assets/jupyterlab_landing.png" height="200">
+<p>To make your live easier later on with version control, go up one level in the directory structure and make your own directory for the code you are going to write in this course:</p>
+<img src="../assets/jupyterlab_toplevel_annotated.png" height="400">
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="On-your-own-device">On your own device<a class="anchor-link" href="#On-your-own-device">&#182;</a></h4><p>All the materials can be access outside of JupyterLab as well. The repository with the course materials can be found <a href="https://github.com/tilmantroester/bayesian_statistical_methods/tree/fs2023">on github</a>.</p>
+<p>To set up your own computing environment I strongly recommend anaconda. Either using <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> or the much faster <a href="https://mamba.readthedocs.io/en/latest/installation.html#install-script">mamba</a> implementation.</p>
 
 </div>
 </div>
