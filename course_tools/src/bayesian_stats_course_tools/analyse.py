@@ -70,9 +70,10 @@ def analyse_data(data,
 
     if theta_init is None:
         theta_init = theta_true
+    theta_init = np.array(theta_init)
 
     if theta_init_std is None:
-        theta_init_std = 0.1*np.ones_like(theta_init)
+        theta_init_std = 0.1*theta_init
 
     if model_x is None:
         model_x = x
@@ -205,7 +206,7 @@ def analyse_data(data,
             x=x, y=y, y_err=sigma_y,
             models=[
                 dict(x=model_x, y=model_fn(theta_MAP, model_x),
-                    style=dict(color="C1", label="MAP model")),
+                    style=dict(color="C2", label="MAP model")),
                 
                 dict(x=model_x, lower=model_quantiles[0], upper=model_quantiles[-1],
                     style=dict(color="C1", alpha=0.5, label="Model predictions")),
