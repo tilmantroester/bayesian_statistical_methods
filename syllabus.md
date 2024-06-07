@@ -73,10 +73,11 @@ Notebook: `lectures/sampling.ipynb`
 - Show that Metropolis-Hastings satisfies detailed balance
 
 # 6. Sampling from distributions 2
-Notebook: `lectures/sampling.ipynb`
+Notebook: `lectures/sampling_2.ipynb`
 - Burn-in, convergence, and auto-correlation
 - Slice sampling
 - Nested sampling
+- Application to model selection using Bayes' ratio on super novae data
 ## Exercises
 - Implement nested or slice sampling
 - Use emcee and dynesty
