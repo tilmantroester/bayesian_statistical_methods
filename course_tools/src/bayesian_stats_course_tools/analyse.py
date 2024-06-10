@@ -14,6 +14,11 @@ def plot_data(x, y, y_err, models=None, subtract_y=None,
     fig, ax = plt.subplots()
 
     data_kwargs = {**data_kwargs}
+    if "ls" not in data_kwargs and "linestyle" not in data_kwargs:
+        data_kwargs["linestyle"] = "none"
+    if "marker" not in data_kwargs:
+        data_kwargs["marker"] = "."
+
     if subtract_y is None:
         subtract_y = np.zeros_like(y)
     ax.errorbar(x, y-subtract_y, y_err, **data_kwargs, label="Data")
@@ -57,8 +62,8 @@ def plot_data(x, y, y_err, models=None, subtract_y=None,
 
 
 def analyse_data(data,
-                 log_posterior_fn, model_fn, predict_fn, ppd_test_statistic_fn,
-                 param_names,
+                 log_posterior_fn, model_fn, predict_fn, ppd_test_statistic_fn=None,
+                 param_names=None,
                  derived_parameter_fn=None, derived_parameter_names=[],
                  derived_parameter_true=[],
                  theta_true=None,
@@ -74,6 +79,10 @@ def analyse_data(data,
 
     if theta_init_std is None:
         theta_init_std = 0.1*theta_init
+        theta_init_std[theta_init_std == 0.0] = 0.1
+
+    if param_names is None:
+        param_names = [f"p_{i}" for i in range(theta_init.size)]
 
     if model_x is None:
         model_x = x
