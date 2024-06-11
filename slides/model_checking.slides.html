@@ -8188,6 +8188,7 @@ Quadratic: WAIC = -67.7, p_WAIC = 4.2
 <p>The idea behind cross-validation is to split the data into a training set $y_\mathrm{train}$ and a holdout set $y_\mathrm{holdout}$.</p>
 <p>We then evaluate the PPD (using the posterior $p(\theta | y_\mathrm{train})$) at $y_\mathrm{holdout}$.</p>
 <p>This checks if the model can predict each data point given all the other data points.</p>
+<p>This is a very clean apporach to model checking but it usually assumes that there are $n$ i.i.d. data points, or at least that the data can be partitioned as such. For correlated data, that might not be the case.</p>
 </div>
 </div>
 </div>
