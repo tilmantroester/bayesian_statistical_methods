@@ -7490,17 +7490,35 @@ $$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Cramer-Rao-bound">Cramer-Rao bound<a class="anchor-link" href="#Cramer-Rao-bound">¶</a></h3><p>The variance of an estimator $\hat\theta$ is bounded from below by the inverse of the Fisher information for that parameter:
 $$
-    \Var[\hat\theta] \geq \frac{1}{I(\theta)}
-$$
-For $n$ idd Gaussian $\vec X\sim \Norm(\mu, \sigma^2 I_n)$, with known variance $\sigma^2$ and unknown mean $\mu$
+    \Var[\hat\theta] \geq \frac{1}{I(\theta)}\,.
+$$</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>For $n$ idd Gaussian $\vec X\sim \Norm(\mu, \sigma^2 I_n)$, with known variance $\sigma^2$ and unknown mean $\mu$
 $$
     \log p(\vec X |\mu) = -\frac{1}{2}\sum_i \frac{(X_i - \mu)^2}{\sigma^2} + \text{const}
 $$
 The Fisher informaton on $\mu$ is
 $$
-    I(\mu) = \frac{n}{\sigma^2}
-$$
-The Cramer-Rao bound is therefore
+    I(\mu) = \frac{n}{\sigma^2}\,.
+$$</p>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The Cramer-Rao bound is therefore
 $$
     \Var[\hat\mu] \geq \frac{\sigma^2}{n}
 $$
@@ -7519,13 +7537,25 @@ That means that the variance of the sample mean is the lowest possible variance 
     I_{ij}(\vec\theta) &amp;= \E_{p(X|\vec\theta)}\left[\left.\left(\frac{\partial \log p(X|\vec\theta)}{\partial \theta_i}\right)\left(\frac{\partial\log p(X|\vec\theta)}{\partial \theta_j}\right)\right|\theta\right] \\
     &amp;= -\E_{p(X|\vec\theta)}\left[\left.\frac{\partial^2 \log p(X|\vec\theta)}{\partial \theta_i\partial\theta_j}\right|\theta\right]
 \end{align}</p>
-<p>We can get the covariance of the parameters $\vec\theta$ by taking the inverse of the Fisher information matrix.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We can get an estimate of the covariance of the parameters $\vec\theta$ by taking the inverse of the Fisher information matrix:
+$$
+    \Cov[\vec\theta] = I(\vec\theta)^{-1}\,.
+$$</p>
 <p>This allows us to make predictions on what the constraints on the parameters are going to be before we take data.</p>
 <p>This is only exact in the case of Gaussian distributed parameters but even if not this is a useful tool to get an idea on what an experimental setup (as encoded in the likelihood) is expected to produce.</p>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7538,7 +7568,7 @@ $$</p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7547,12 +7577,21 @@ $$</p>
 <h3 id="Jeffreys-prior">Jeffreys prior<a class="anchor-link" href="#Jeffreys-prior">¶</a></h3><p>Another place where the Fisher information appears is the Jeffreys prior.</p>
 <p>We have talked about uninformative priors a couple of times so far.
 We choose uninformative priors when we do not want our posteriors to be influenced by our choice of priors.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>But what does uninformative mean?</p>
 <p>A flat prior in $\theta$ will not be flat for $\theta^2$ for example:</p>
 </div>
 </div>
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_remove-input">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_remove-input">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -7570,23 +7609,32 @@ We choose uninformative priors when we do not want our posteriors to be influenc
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Jeffreys priors address this, as they are constructed such that they are invariant to reparameterisation.</p>
-<p>$$
-    p(\theta) \propto \sqrt{\det I(\theta)}
+<p>Jeffreys priors address this, as they are constructed such that they are invariant to reparameterisation. This is achieved by setting the prior to
+$$
+    p(\theta) \propto \sqrt{\det I(\theta)}\,.
 $$</p>
-<p>This works, because under a reparameterisation $\theta \rightarrow \rho$, the Fisher information transforms as
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>This definition gives us the desired reparameterisation invariance, because under a reparameterisation $\theta \rightarrow \rho$, the Fisher information transforms as
 $$
     I(\rho) = I(\theta)\left(\frac{\dd \theta}{\dd\rho}\right)^2\ ,
 $$
-while the the change of variables transforms the distribution $p(\theta)$ as
+while the change of variables transforms the distribution $p(\theta)$ as
 $$
     p(\rho) = p(\theta)\left|\frac{\dd\theta}{\dd\rho}\right|\ .
-$$
-By choosing $p(\theta) \propto \sqrt{\det I(\theta)}$, we also have $p(\rho) \propto \sqrt{\det I(\rho)}$, the invariance to reparameterisation we are looking for.</p>
+$$</p>
+<p>By choosing $p(\theta) \propto \sqrt{\det I(\theta)}$, we also have $p(\rho) \propto \sqrt{\det I(\rho)}$, the invariance to reparameterisation we are looking for.</p>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7601,13 +7649,22 @@ $$
     p(\mu) \propto \frac{1}{\sigma} \propto \text{const}\ ,
 $$
 i.e., it does not depend on $\mu$. So for the mean (or location parameters in general), a flat prior is appropriate.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Note that the constant prior is not a probability distribution, since it cannot be normalised.
 It is an improper prior. In this case the posterior is still well-defined though.</p>
 <p>In practice there are usually physical limits on the parameter, which addresses this.</p>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7985,8 +8042,8 @@ $$</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Expected uncertainty on a: 1.5000
-Expected uncertainty on T: 1.000
+<pre>Expected uncertainty on a: 0.0087
+Expected uncertainty on T: 0.010
 </pre>
 </div>
 </div>
@@ -8021,6 +8078,15 @@ Expected uncertainty on T: 1.000
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>The Fisher information matches the posterior well. One reason is that we did not include any prior information.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Instead of the Fisher information (which is the expectation over the Hessian of the log likelihood), we might just want to get a Gaussian approximation of the posterior.</p>
 <p>Expand the log-posterior around the posterior mode $\vec \theta^*$:
 $$
@@ -8030,7 +8096,7 @@ The term $\propto (\vec \theta - \vec \theta^*)$ is zero at the mode.</p>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div></div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8047,7 +8113,7 @@ $$</p>
 </div>
 </div>
 </div>
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8062,7 +8128,7 @@ $$</p>
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8081,16 +8147,26 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Hamiltonian-Monte-Carlo">Hamiltonian Monte Carlo<a class="anchor-link" href="#Hamiltonian-Monte-Carlo">¶</a></h2><p>Hamiltonian Monte Carlo is an MCMC algorithm that scales well to high dimensions.</p>
-<p>The downside is that it requires the derivative of the log probability. But with JAX we can get that easily now.</p>
+<p>The downside is that it requires the gradient of the log probability. But with JAX we can get that easily now.</p>
+<p>Hamilton Monte Carlo casts the sampling problem as a physics problem of exploring a potential using Hamiltonian dynamics.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>We define a Hamiltonian
 $$
     H(\vec x, \vec p) = U(\vec x) + K(\vec p)
 $$
-with potential $U(\vec x)$ and kinetic energy $K(\vec p) = \frac{1}{2}\vec p^T M^{-1}\vec p$, with mass matrix $M$.</p>
+with potential $U(\vec x)$ at position $\vec x$ and kinetic energy $K(\vec p) = \frac{1}{2}\vec p^T M^{-1}\vec p$ of momentum $\vec p$ with mass matrix $M$.</p>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8100,7 +8176,7 @@ with potential $U(\vec x)$ and kinetic energy $K(\vec p) = \frac{1}{2}\vec p^T M
 $$
     p_H(\vec x, \vec p) = \frac{1}{Z}\ee^{-H(\vec x, \vec p)} = \frac{1}{Z}\ee^{-U(\vec x)}\ee^{-K(\vec p)}
 $$
-The marginal distribution of $\vec x$ is then
+The positions and momenta are independent, such that the marginal distribution of $\vec x$ is
 $$
     p(\vec x) \propto \ee^{-U(\vec x)}
 $$
@@ -8149,15 +8225,25 @@ This is the distribution we want to sample from. To do this, we define $U(\vec x
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The leap frog algorithm works like this:</p>
+<p>The leap frog algorithm is a method to integrate the equation of motion to evolve the system a small amount $\epsilon$ from time $t$ to time $t+\epsilon$.</p>
 <ol>
 <li>Evolve the momentum a half step: $\vec p_{t+\epsilon/2} = \vec p_\epsilon - \frac{\epsilon}{2}\nabla U(\vec x_t)$</li>
 <li>Evolve the position by a full step: $\vec x_{t+\epsilon} = \vec x_t + \epsilon M^{-1} \vec p_{t+\epsilon/2}$</li>
 <li>Evolve the momentum another half step: $\vec p_{t+\epsilon} = \vec p_{t+\epsilon/2} - \frac{\epsilon}{2}\nabla U(\vec x_{t+\epsilon})$</li>
 </ol>
-<p>The acceptance probability is
+<p>Repeat this for $L$ steps to move from the state $\vec x_\mathrm{old}, \vec p_\mathrm{old}$ to $\vec x_\mathrm{new}, \vec p_\mathrm{new}$.</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Then accept the new state $\vec x_\mathrm{new}, \vec p_\mathrm{new}$ with probability
 $$
-    a = \min\left(1, \frac{\ee^{-H(\vec x_\mathrm{new}, \vec p_\mathrm{new})}}{\ee^{-H(\vec x_\mathrm{old}, \vec p_\mathrm{old})}}\right)
+    a = \min\left(1, \frac{\ee^{-H(\vec x_\mathrm{new}, \vec p_\mathrm{new})}}{\ee^{-H(\vec x_\mathrm{old}, \vec p_\mathrm{old})}}\right)\,.
 $$</p>
 </div>
 </div>
@@ -8168,15 +8254,24 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>If the equations of motions are solved exactly, the Hamiltonian would be conserved, and the acceptance probability would always be 1.</p>
+<p>If the equations of motions are solved exactly, the Hamiltonian is be conserved, and the acceptance probability is always be 1.</p>
 <p>In practice, we get an integration error, which depends on the step size $\epsilon$ and number of steps $L$. These are the main tuning parameters.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>For the integration to be stable, $\epsilon$ needs to be smaller than the smallest length scale in the distribution we want to sample.</p>
 <p>The number of steps should be chosen such that $L\epsilon$ is long enough to cover the longest length scale.</p>
 <p>In addition, the mass matrix $M$ can be chosen to align the momenta better with the shape of the distribution.</p>
 </div>
 </div>
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
