@@ -139,8 +139,11 @@ Notebook: `lectures/simulation_based_inference.ipynb`
 - Show that the function that minimises the L_1 loss is the median
 - Implement neural density estimation 
 
-# 11. Recap
+# 11. Interpreting posteriors and recap
 Notebook: `lectures/recap.ipynb`
+- How to interpret and summarise posteriors
+    - Credible intervals
+    - Projection effects
 - Recap of the course
 - Worked example: cosmology inference on Type Ia supernovae data
 
