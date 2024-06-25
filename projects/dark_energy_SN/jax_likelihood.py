@@ -39,13 +39,11 @@ class JAXPantheonSH0ESDataModel(PantheonSH0ESLikelihood):
     @property
     def data(self):
         return jnp.concatenate((self.calibrator_magnitude_data, self.magnitude_data))
-    
+
     @property
     def z(self):
         return jnp.concatenate((self.z_CMB_calibrator, self.z_CMB))
-    
+
     @property
     def data_error(self):
         return jnp.sqrt(jnp.diag(self.covariance))
-
-
