@@ -6,12 +6,18 @@ dependencies:
   - numpy
   - scipy
   - matplotlib
+  - astropy
   - pandas
   - emcee
   - jax
   - flax
-  - tinygp
   - jaxopt
+  - optax
+  - tqdm
+  - tinygp
   - arviz
   - corner
   - dynesty
+  - pip
+  - pip:
+    - tensorflow-probability[jax]

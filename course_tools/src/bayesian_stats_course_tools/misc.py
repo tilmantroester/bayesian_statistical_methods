@@ -7,7 +7,7 @@ def load_tex_defs(tex_defs_file=None):
         tex_defs_file = Path(__file__).parent / "tex_defs.md"
     with open(tex_defs_file, "r") as f:
         defs = f.read()
-    
+
     defs = Markdown(defs)
     return defs
 

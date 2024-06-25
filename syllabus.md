@@ -73,10 +73,11 @@ Notebook: `lectures/sampling.ipynb`
 - Show that Metropolis-Hastings satisfies detailed balance
 
 # 6. Sampling from distributions 2
-Notebook: `lectures/sampling.ipynb`
+Notebook: `lectures/sampling_2.ipynb`
 - Burn-in, convergence, and auto-correlation
 - Slice sampling
 - Nested sampling
+- Application to model selection using Bayes' ratio on super novae data
 ## Exercises
 - Implement nested or slice sampling
 - Use emcee and dynesty
@@ -138,8 +139,11 @@ Notebook: `lectures/simulation_based_inference.ipynb`
 - Show that the function that minimises the L_1 loss is the median
 - Implement neural density estimation 
 
-# 11. Recap
+# 11. Interpreting posteriors and recap
 Notebook: `lectures/recap.ipynb`
+- How to interpret and summarise posteriors
+    - Credible intervals
+    - Projection effects
 - Recap of the course
 - Worked example: cosmology inference on Type Ia supernovae data
 
