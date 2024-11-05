@@ -7473,22 +7473,6 @@ The second equality applies in most cases of relevance.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>For a distribution $p(X | \theta)$ of a RV $X$, given a parameter $\theta$, the Fisher information tells us how much information $X$ can give us about $\theta$.</p>
-<p>The Fisher information is defined as
-\begin{align}
-    I(\theta) &amp;= \E_{p(X|\theta)}\left[\left.\left(\frac{\partial\log p(X|\theta)}{\partial\theta}\right)^2 \right| \theta\right] \\
-    &amp;=^* -\E_{p(X|\theta)}\left[\left.\frac{\partial^2 \log p(X|\theta)}{\partial\theta^2}\right|\theta\right]\ .
-\end{align}
-The second equality applies in most cases of relevance.</p>
-</div>
-</div>
-</div>
 </div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7612,7 +7596,12 @@ We choose uninformative priors when we do not want our posteriors to be influenc
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>But what does uninformative mean?</p>
-<h3 id="Clicker">Clicker<a class="anchor-link" href="#Clicker">¶</a></h3>
+<h3 id="Clicker">Clicker<a class="anchor-link" href="#Clicker">¶</a></h3><p>Consider a Gaussian likelihood $p(X | \mu, \sigma) = \frac{1}{\sqrt{2\pi\sigma^2}}\mathrm{e}^{-\frac{1}{2}\frac{(X - \mu)^2}{\sigma^2}}$ where the variance is also an unknown parameter we want to infer. We therefore need to choose a prior - how should we define it?</p>
+<ul>
+<li>We define a prior on $\sigma$: $p(\sigma)$.</li>
+<li>We define a different prior on $\sigma^2$: $p(\sigma^2)$.</li>
+<li>It doesn't matter whether we use $\sigma$ or $\sigma^2$, the prior is the same.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7760,7 +7749,7 @@ $$</p>
 <li>These can be difficult to define in practise.</li>
 </ul>
 </li>
-<li>These priors are often improper, so physical insight or other prior knowledge needs to be included.</li>
+<li>These priors are often improper, so some physical insight or other prior knowledge needs to be included in most cases anyways.</li>
 </ul>
 </div>
 </div>
@@ -7771,7 +7760,13 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Clicker">Clicker<a class="anchor-link" href="#Clicker">¶</a></h3><p>Multivariate Fisher</p>
+<h3 id="Clicker">Clicker<a class="anchor-link" href="#Clicker">¶</a></h3><p>In the multivariate case, the Fisher information matrix $I_{ij}(\vec{\theta})$ is given by the expectation of the product of partial derivatives of the log-likelihood with respect to the parameters $\theta_i$ and $\theta_j$. What does the inverse of this matrix represent?</p>
+<ul>
+<li>The gradient of the likelihood.</li>
+<li>An estimate of the covariance of $\vec{\theta}$.</li>
+<li>The information density of each parameter.</li>
+<li>The posterior distribution of $\vec{\theta}$.</li>
+</ul>
 </div>
 </div>
 </div>
