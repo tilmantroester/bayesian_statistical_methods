@@ -15,6 +15,7 @@ dependencies:
   - optax
   - tqdm
   - tinygp
+  - numpyro
   - arviz
   - corner
   - dynesty
