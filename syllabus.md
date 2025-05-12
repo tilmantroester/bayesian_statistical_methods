@@ -139,10 +139,16 @@ Notebook: `lectures/simulation_based_inference.ipynb`
 - Show that the function that minimises the L_1 loss is the median
 - Implement neural density estimation 
 
-# 11. Gaussian processes
+# 11. Gaussian processes & probabilistic programming
 Notebook: `lectures/gaussian_processes.ipynb`
-- WIP
+- Gaussian processes
+- Kernel functions & Gaussian processes regression with tinygp
+- Probabilistic programming with numpyro
+- Sampling GP parameters
 
 # 12. Gaussian random fields & recap
+Notebook: `lectures/gaussian_processes.ipynb`
+- Gaussian random fields
+- Power spectrum
 Notebook: `lectures/recap.ipynb`
 - Recap of the course
