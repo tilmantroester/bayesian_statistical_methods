@@ -19,6 +19,7 @@ dependencies:
   - arviz
   - corner
   - dynesty
+  - getdist
   - pip
   - pip:
     - tensorflow-probability[jax]
