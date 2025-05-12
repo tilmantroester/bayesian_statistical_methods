@@ -7476,6 +7476,15 @@ $$\def\Uniform{\mathcal{U}}$$</p>
 </ul>
 </li>
 </ol>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li><p>Finding the interval for step 2 uses a stepping out procedure:</p>
 <p>Given a step size $w$ (this is the tuning parameter of slice sampling)</p>
@@ -7486,8 +7495,18 @@ $$\def\Uniform{\mathcal{U}}$$</p>
 <li>While $p(R) &gt; u$: $R = R + w$</li>
 </ol>
 </li>
-<li><p>Shrinking the interval in step 3:</p>
-<ol>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Shrinking the interval in step 3:<ol>
 <li>While $p(x') \leq u$<ul>
 <li>If $x' &gt; x_t$, $R = x'$</li>
 <li>Else $L = x'$</li>
@@ -7499,7 +7518,7 @@ $$\def\Uniform{\mathcal{U}}$$</p>
 </div>
 </div>
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_remove-input">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_remove-input">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -69139,6 +69158,22 @@ Z2h0PSIyMjEuNzYiLz4KICA8L2NsaXBQYXRoPgogPC9kZWZzPgo8L3N2Zz4K\
 </div>
 </div>
 </div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Clicker">Clicker<a class="anchor-link" href="#Clicker">¶</a></h3><p>Which of the following is a key advantage of slice sampling over the Metropolis-Hastings algorithm?</p>
+<ul>
+<li>It does not require any tuning parameters.</li>
+<li>It automatically adjusts the step size to achieve optimal mixing.</li>
+<li>It requires less tuning.</li>
+<li>It guarantees faster convergence to the target distribution.</li>
+</ul>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -69147,15 +69182,45 @@ Z2h0PSIyMjEuNzYiLz4KICA8L2NsaXBQYXRoPgogPC9kZWZzPgo8L3N2Zz4K\
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Nested-sampling">Nested sampling<a class="anchor-link" href="#Nested-sampling">¶</a></h2><p>A good review paper is <a href="https://arxiv.org/abs/2205.15570">https://arxiv.org/abs/2205.15570</a>, which has come out just recently and gives a good introduction as well as summarises the state of the art in nested sampling.</p>
 <p>Nested sampling takes a very different approach to sampling than the MCMC methods covered so far.
-The main advantage is its ability to estimate the evidence. Remember Bayes' theorem
+The main advantage is its ability to estimate the evidence $p(d)$ in Bayes' theorem:
 $$
     p(\theta|d) = \frac{p(d|\theta)p(\theta)}{p(d)}
+$$</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The evidence becomes very useful when comparing models:</p>
+<p>Recall that we can use the Bayes' ratio to compare the probability of two models $M_1$ and $M_2$:
 $$
-To make the notation clearer (and consistent with some of the literature on nested sampling), write this as
+    R = \frac{p(d | M_1)}{p(d | M_2)}
+$$
+With nested sampling we can compute the evidences $p(d | M_1)$ and $p(d | M_2)$.</p>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>To make the notation clearer (and consistent with some of the literature on nested sampling), write this as
 $$
     p(\theta) = \frac{L(\theta)\pi(\theta)}{Z} \ ,
 $$
-where $L(\theta) = p(d|\theta)$ is the likelihood, $\pi(\theta)=p(\theta)$ the prior, $Z=p(d)$ the evidence or marginal likelihood, and $p(\theta)$ the posterior.</p>
+where</p>
+<ul>
+<li>$L(\theta) = p(d|\theta)$ is the likelihood,</li>
+<li>$\pi(\theta)=p(\theta)$ is the prior,</li>
+<li>$Z=p(d)$ is the evidence or marginal likelihood,</li>
+<li>$p(\theta)$ is the posterior.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -69165,15 +69230,30 @@ where $L(\theta) = p(d|\theta)$ is the likelihood, $\pi(\theta)=p(\theta)$ the p
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Evaluating the evidence
+<p>How to compute the evidence?</p>
+<p>Since the posterior is a normalised probability distribution:
+$$
+    \int p(\theta | d) p(d)\dd \theta = \int p(d|\theta)p(\theta)\dd \theta = p(d)\,.
+$$</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Or in the other notation:
 $$
     Z = \int L(\theta)\pi(\theta)\dd \theta
-$$
-by naive integration is usually intractable for high-dimensional problems. To see this, imagine discretising the integral into 50 intervals: $Z = \sum_i^{50} L(\theta_i)\pi(\theta_i)\Delta\theta$. In 10 dimensions (which is not much as far as real-world applications are concerned), this would require $50^{10}\approx 10^{17}$ evaluations of the likelihood.</p>
+$$</p>
+<p>For high-dimensional problems this is usually intractable by naive integration.</p>
+<p>To see this, imagine discretising the integral into 50 intervals: $Z = \sum_i^{50} L(\theta_i)\pi(\theta_i)\Delta\theta$. In 10 dimensions (which is not much as far as real-world applications are concerned), this would require $50^{10}\approx 10^{17}$ evaluations of the likelihood.</p>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -69181,7 +69261,7 @@ by naive integration is usually intractable for high-dimensional problems. To se
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>The idea behind nested sampling is to rewrite the integral so that instead of integrating over $\theta$, the integral is over levels of the likelihood. This is somewhat like doing Lebesgue integration instead of Riemann integration.</p>
 <p>Define $\dd X = \pi(\theta)\dd\theta$. Then
-$$
+$$ 
     Z = \int L(\theta)\pi(\theta)\dd \theta = \int L(X)\dd X\,.
 $$</p>
 </div>
@@ -69206,10 +69286,11 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>With this, integral for $Z$ can now be evaluated numerically, since $X \in (0,1)$, for example with the trapezoidal rule:
+<p>With this, the integral for $Z$ can now be evaluated numerically, since $X \in (0,1)$, for example with the trapezoidal rule:
 $$
     Z \approx \sum_i w_i L_i,\quad w_i=\frac{1}{2}(X_{i-1} - X_{i+1}), \quad L_i = L(X_i)
 $$</p>
+<p>So we need an algorithm to compute the likelihoods $L_i$ and volumes $X_i$.</p>
 </div>
 </div>
 </div>
@@ -69236,11 +69317,16 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>How do we estimate the volumes $X_i$? The idea is similar to the Monte Carlo estimation of $\pi$ at the beginning of the course: we sample an outer volume (the square) and count how many point end up inside the smaller inner volume (the quadrant of the circle). The ratio of the volumes is then approximated by the ratio of the points inside the inner volume over all the points.</p>
+<p>How do we estimate the volumes $X_i$?</p>
+<p>The idea is similar to the Monte Carlo estimation of $\pi$ at the beginning of the course: we sample an outer volume (the square) and count how many points end up inside the smaller inner volume (the quadrant of the circle).</p>
+<p>The ratio of the volumes is then approximated by the ratio of the points inside the inner volume over all the points:</p>
+<p>$$
+    \frac{V_\mathrm{inner}}{V_\mathrm{outer}} \approx \frac{\text{number of samples in }V_\mathrm{inner}}{\text{number of samples in }V_\mathrm{outer}}
+$$</p>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -69253,7 +69339,7 @@ $$</p>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -69262,7 +69348,7 @@ $$</p>
 <p>The dead points sample the posterior, when weighted appropriately.
 To see this, consider how an expectation of $f$ with respect to the posterior $p(\theta)$ is defined:
 $$
-    \E_p[f] = \int f(\theta)p(\theta)\dd\theta = \int f(\theta)\frac{L(\theta)\pi(\theta)}{Z}\dd\theta \,.
+    \E_p[f] = \int f(\theta)p(\theta)\dd\theta = \int f(\theta)\frac{L(\theta)\pi(\theta)}{Z}\dd\theta \,. 
 $$</p>
 </div>
 </div>
@@ -69275,12 +69361,22 @@ $$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Now write this in terms of $\dd X=\pi(\theta)\dd\theta$:
 $$
-    \E_p[f] = \frac{1}{Z}\int f L \dd X \approx \sum_i \frac{w_i L_i}{Z} f_i, \quad f_i = f(\theta_i)
-$$
-So the dead point are posterior samples if they are weighted with weights $p_i$:
+    \E_p[f] = \frac{1}{Z}\int f L \dd X \approx \sum_i \frac{w_i L_i}{Z} f_i, \quad f_i = f(\theta_i) 
+$$</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>So the dead point are posterior samples if they are weighted with weights $p_i$:
 $$
     p_i = \frac{w_i L_i}{Z}\ ,\quad w_i=\frac{1}{2}(X_{i-1} - X_{i+1})
 $$</p>
+<p>Nested sampling is built around estimating the evidence but we get posterior samples for free in the process!</p>
 </div>
 </div>
 </div>
@@ -93100,10 +93196,16 @@ aGVpZ2h0PSIyMjEuNzYiLz4KICA8L2NsaXBQYXRoPgogPC9kZWZzPgo8L3N2Zz4K\
 
 <span class="c1"># In this case we can find the exact evidence by direct integration</span>
 <span class="kn">import</span> <span class="nn">scipy.integrate</span>
-<span class="n">log_Z_exact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">target_distr</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">prior</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">log_Z_exact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span>
+    <span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">target_distr</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">prior</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span>
+    <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Exact log Z: </span><span class="si">{</span><span class="n">log_Z_exact</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Nested sampling estimate of log Z: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">log_Z</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">±</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">log_Z</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Nested sampling estimate of log Z: "</span>
+      <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">log_Z</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">±</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">log_Z</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -93146,13 +93248,50 @@ Nested sampling estimate of log Z: -0.81±0.05
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Clicker">Clicker<a class="anchor-link" href="#Clicker">¶</a></h3><p>What is the primary function of live points in the algorithm?</p>
+<ul>
+<li>They are used to randomly sample new points from the likelihood distribution, which speeds up the convergence.</li>
+<li>They track the likelihood of all previously explored points, ensuring none are revisited during sampling.</li>
+<li>They are used to directly estimate the posterior distribution at each iteration.</li>
+<li>They define the current region of the prior being explored and are iteratively replaced to shrink the likelihood volume.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Challenges-with-nested-sampling">Challenges with nested sampling<a class="anchor-link" href="#Challenges-with-nested-sampling">¶</a></h3><p>The big challenge in implementing nested sampling in practice is sampling from the prior with a likelihood constraint. This requires running MCMC or rejection sampling at each step to get a new live point.</p>
 <p>If all you care about is posterior samples, then nested sampling can be quite inefficient.
 Its strength is really the estimation of the evidence, which is important for model comparison.</p>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Clicker">Clicker<a class="anchor-link" href="#Clicker">¶</a></h3><p>Recall the Bayes' ratio to compare the probability of two models $M_1$ and $M_2$:
+$$
+    R = \frac{p(d | M_1)}{p(d | M_2)}
+$$
+With evidences $Z_1 = p(d | M_1)$ and $Z_2 = p(d | M_2)$.</p>
+<p>Does the choice of a prior affect the Bayes ratio?</p>
+<ul>
+<li>Yes, because larger prior ranges allow for a broader range of parameter values to contribute to the evidence, leading to a more flexible model comparison.</li>
+<li>No, the prior only affects the normalization of the posterior distribution, not the evidence $Z$.</li>
+<li>Yes, because the prior volume changes the evidence.</li>
+<li>No, because the priors cancel out in the Bayes ratio.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -93168,7 +93307,7 @@ $$</p>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -93287,7 +93426,7 @@ With nested sampling we can compute the evidences $Z_1 = p(d | M_1)$ and $Z_2 = 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>One way to do this to look at Type Ia super novae: due to the astrophysical processes behind them, we know how bright they are intrinsically. This allows us the estimate the distance to a Type Ia super nova. This is a special property, usually we do not know how far objects are away!</p>
+<p>One way to do this to look at Type Ia super novae: due to the astrophysical processes behind them, we know how bright they are intrinsically. This allows us to estimate the distance to a Type Ia super nova. This is a special property, usually we do not know how far objects are away!</p>
 </div>
 </div>
 </div>
@@ -93330,7 +93469,7 @@ where $M$ is a calibration parameter that we will marginalise over.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>For the data we use the Pantheon sample (Brout+2022, <a href="https://arxiv.org/abs/2202.04077">https://arxiv.org/abs/2202.04077</a>). This includes about 1500 Type Ia super novae and is the state-of-the-art data set fort this observation. We simplify our analysis a little bit here but the full setup is not that much more complicated.</p>
-<p>The data are observations of the distance modules $\hat{\mu_i}$ at redshfits $z_i$. The data are correlated, so we need a multivariate Gaussian likelihood:
+<p>The data are observations of the distance moduli $\hat{\mu_i}$ at redshfits $z_i$. The data are correlated, so we need a multivariate Gaussian likelihood:
 $$
 \vec{\hat{\mu}} \sim \Norm(\vec{\mu}(\vec z), \Sigma)\,,
 $$
@@ -93709,8 +93848,26 @@ logz: -729.220 +/-  0.321
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Project-ideas">Project ideas<a class="anchor-link" href="#Project-ideas">¶</a></h2><ul>
 <li>Look deeper into one of the sampling methods. For example, how do the more sophisticated algorithms in <code>emcee</code>, <code>zeus</code>, or <code>dynesty</code> work?</li>
-<li>Do a full analysis of the super nova data set.</li>
+<li>Do a full analysis of the super nova data set, following the Bayesian data analysis workflow:<ol>
+<li>Build the model (that's already done for you), check that the model is reasonable with prior predictive checks</li>
+<li>Fit the model (MAP, posterior). Analyse the posterior distribution.</li>
+<li>Check the model, compare between models</li>
+</ol>
+</li>
 </ul>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>General data analysis projects:</p>
+<p>No original research is expected. If you use real data, it is probably better to follow and reproduce an existing analysis of these data.</p>
+<p>Even if it is a published paper, there is a very good chance that you can improve the statistical analysis by using the methods from this course!</p>
+<p>Focus on the statistics, not the messiness of real data!</p>
 </div>
 </div>
 </div>

@@ -17,7 +17,8 @@ axes.labelcolor : "dimgrey"
 xtick.color : "dimgrey"
 ytick.color : "dimgrey"
 
-patch.edgecolor :  dimgrey
+patch.edgecolor : None
+
 hatch.color :     dimgrey
 
 boxplot.flierprops.color:           dimgrey

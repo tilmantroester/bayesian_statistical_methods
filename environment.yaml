@@ -15,9 +15,11 @@ dependencies:
   - optax
   - tqdm
   - tinygp
+  - numpyro
   - arviz
   - corner
   - dynesty
+  - getdist
   - pip
   - pip:
     - tensorflow-probability[jax]

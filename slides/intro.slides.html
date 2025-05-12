@@ -7416,7 +7416,39 @@ main {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
 <div class="reveal">
-<div class="slides"><section><section>
+<div class="slides"><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_remove-input">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h1>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<!-- Define LaTeX macros -->
+<p>$\def\E{\operatorname{E}}$
+$\def\Var{\operatorname{Var}}$
+$\def\Cov{\operatorname{Cov}}$
+$\def\dd{\mathrm{d}}$
+$\def\ee{\mathrm{e}}$
+$\def\Norm{\mathcal{N}}$
+$\def\Uniform{\mathcal{U}}$</p>
+<!-- MathJax needs them to be defined again for the non-inline environment -->
+<p>$$\def\E{\operatorname{E}}$$
+$$\def\Var{\operatorname{Var}}$$
+$$\def\Cov{\operatorname{Cov}}$$
+$$\def\dd{\mathrm{d}}$$
+$$\def\ee{\mathrm{e}}$$
+$$\def\Norm{\mathcal{N}}$$
+$$\def\Uniform{\mathcal{U}}$$</p>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7457,8 +7489,8 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Logistics">Logistics<a class="anchor-link" href="#Logistics">¶</a></h2><p>Slides and notebooks available on Moodle and <a href="https://github.com/tilmantroester/bayesian_statistical_methods/tree/fs24">github</a>.</p>
-<p>Attendance is not required but strongly recommended. I will try to keep a zoom connection open but the plan is to keep the course interactive with a lot of hands-on practice, so attending remotely (or not at all) will probably not be as useful.</p>
+<h2 id="Logistics">Logistics<a class="anchor-link" href="#Logistics">¶</a></h2><p>All lecture materials (slides, notebooks, etc) are available on JupyterHub (accessible from Moodle) and <a href="https://github.com/tilmantroester/bayesian_statistical_methods/tree/hs24">github</a>.</p>
+<p>I will try to keep a recorded zoom connection open but the course is designed for in-person attendance.</p>
 </div>
 </div>
 </div>
@@ -7468,10 +7500,11 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grades">Grades<a class="anchor-link" href="#Grades">¶</a></h3><p>If you want credit points, the grade is going to be based on a small research project &amp; report.</p>
+<h3 id="Grades">Grades<a class="anchor-link" href="#Grades">¶</a></h3><p>If you want credit points, the grade is going to be based on a small research project with a report and presentation.</p>
 <ul>
-<li>The project should either cover a data analysis or the theory behind a statistical tool.<ul>
-<li>This can be one of the project ideas I will suggest throughout the course or some data or algorithm you find interesting and want to explore more, for example from your own research.</li>
+<li>Usually the project should cover a data analysis.<ul>
+<li>Other topics, such as the theory behind a statistical tool can be acceptable as well</li>
+<li>Project topics need to be discussed with me first</li>
 </ul>
 </li>
 <li>Format: like a journal article (specifically a Letter):<ul>
@@ -7481,7 +7514,7 @@ main {
 <li>I will add a good example report on Moodle</li>
 </ul>
 </li>
-<li>Group work is allowed. Conditions:<ul>
+<li>Group work is strongly encouraged. Conditions:<ul>
 <li>Max group size: 5</li>
 <li>Everyone in the group gets the same grade</li>
 <li>Everyone needs to contribute to both the report and the analysis</li>
@@ -7489,7 +7522,7 @@ main {
 </ul>
 </li>
 </ul>
-<p>Deadline is 2024/07/19 at 23:59 CEST.</p>
+<p>Deadline is 2025/01/17 at 23:59 CET.</p>
 </div>
 </div>
 </div>
@@ -7535,7 +7568,7 @@ main {
 <li>Anonymous Google form (link on Moodle)</li>
 <li>Email</li>
 <li>In-person</li>
-<li>Official course evaluation on the last day of the course: Friday 14 June at 16:00</li>
+<li>Official course evaluation</li>
 </ul>
 </li>
 </ul>
@@ -7568,9 +7601,128 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Goal-of-the-course">Goal of the course<a class="anchor-link" href="#Goal-of-the-course">¶</a></h3><p>The course should (hopefully) teach you how to approach statistical problems and how to solve them, while being confident in the solutions.</p>
+<p>So not blindly apply statistical tools following some flowchart but understand what the tools do, how they work, and when to use them.</p>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Bayesian-data-analysis">Bayesian data analysis<a class="anchor-link" href="#Bayesian-data-analysis">¶</a></h3><p>Bayesian statistics provides a framework to make inference about the world by combining data with prior knowledge.</p>
 <p>The core of Bayesian data analyses is coming up with a probabilistic model of the world.
 These models describe both the observable and unobservable quantities of a problem in probabilistic terms.</p>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Example:-does-it-rain?">Example: does it rain?<a class="anchor-link" href="#Example:-does-it-rain?">¶</a></h4><p>Imagine you want to know whether it rains on a mountain because you want to go on a hike. There is a weather station but unfortunately, the rain sensor is broken.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>From the weather station we have <strong>data</strong> on</p>
+<ul>
+<li>clouds</li>
+<li>humidity</li>
+<li>wind speed</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We have a <strong>model</strong> for what the clouds, humidity, and winds are like when it rains. For example, there are dark clouds and the humidity is high.</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>From experience having gone to this mountain before, we know that it rains at least some times but not all the time. This is our <strong>prior</strong> knowledge about the unknown quantity we want to infer: is it raining?</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Bayesian statistics gives us a framework to infer probability that it rains from the observed data, a model for the data, and prior knowledge about rain in the region.</p>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Think-in-distributions">Think in distributions<a class="anchor-link" href="#Think-in-distributions">¶</a></h4><p>In Bayesian statistics, the only thing that is exactly known are the observed data, everything else is uncertain.
+To capture the complete uncertainty structure, we work with probability distributions.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>In this example:</p>
+<ul>
+<li>The model of the data is a distribution: when it rains, there can be different types of clouds, humidity levels, and wind speeds. This distribution of the data given the quantity we want to infer is called the <strong>likelihood</strong>.</li>
+<li>Our prior knowledge about rain in the region is a distribution: for example, on average it rains 10% of all days and on the other 90% it does not. This is called the <strong>prior</strong> distribution.</li>
+<li>The probability of rain we infer is a distribution over the possible outcomes. This is the <strong>posterior</strong> distribution.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Treating everything as distributions is not just an academic exercise: knowing about the uncertainty in a quantity can be as important as its mostly likely outcome.</p>
+<p>For example: we could ask not just if it rains but how much rain is expected.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Consider two outcomes of our analysis of the chance for rain:</p>
+<ul>
+<li>it is very likely to rain about 1mm</li>
+<li>it is likely to rain about 1mm but there is also a chance it might rain up to 10mm</li>
+</ul>
+<p>Both statements can be summarised as "there will likely be 1mm of rain".</p>
+<p>But knowledge about the uncertainty is important: in the first case you might bring in umbrella, in the second case you might stay at home to avoid being caught in a downpour.</p>
 </div>
 </div>
 </div>
@@ -7614,17 +7766,6 @@ These models describe both the observable and unobservable quantities of a probl
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Think-in-distributions">Think in distributions<a class="anchor-link" href="#Think-in-distributions">¶</a></h4><p>In Bayesian statistics, the only thing that is exactly known are the observed data, everything else is uncertain.
-To capture the complete uncertainty structure, we work with probability distributions.</p>
-</div>
-</div>
-</div>
 </div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7658,6 +7799,7 @@ But we can often still <em>simulate</em> the model and work with the simulated o
 <h2 id="Literature">Literature<a class="anchor-link" href="#Literature">¶</a></h2><ul>
 <li>Practical Statistics for Astronomers, Wall, 2012 <a href="https://eth.swisscovery.slsp.ch/permalink/41SLSP_ETH/lshl64/alma99117170816205503">ETH library</a>. Short, with a focus on practical applications. Many of the examples and exercises are from astrophysics but are generally applicable, especially for the physical sciences, which often come a bit short in general statistics textbooks. Solutions and data sets are <a href="https://www.astro.ubc.ca/people/jvw/ASTROSTATS/pracstats_web_ed2.html">available online</a>.</li>
 <li>Bayesian Data Analysis, Gelman, 2013 <a href="https://eth.swisscovery.slsp.ch/permalink/41SLSP_ETH/lshl64/alma99117222397805503">ETH library</a>, <a href="http://www.stat.columbia.edu/~gelman/book/">Link</a>. The title says it all.</li>
+<li>Statistical Rethinking, McElreath, 2020 <a href="https://eth.swisscovery.slsp.ch/permalink/41SLSP_ETH/lshl64/alma99117227648305503">ETH library</a>. A very nice introduction to Bayesian statistics. The book uses <code>R</code> and <code>stan</code> but implemtations in other languages are available. Unfortunately, not available online as a PDF.</li>
 <li>Information Theory, Inference, and Learning Algorithms, MacKay, 2003 <a href="http://www.inference.org.uk/itprnn/book.pdf">Link</a>. Heavy on the information theory but also covers inference methods nicely. The exercises come with solutions.</li>
 <li>Weighing the odds, a course in probability and statistics, Williams, 2001 <a href="https://eth.swisscovery.slsp.ch/permalink/41SLSP_ETH/lshl64/alma99117170967205503">ETH library</a>. A good introduction to probability theory and statistics with a high level of mathematical rigour.</li>
 </ul>
@@ -7722,7 +7864,7 @@ If you set up version control, it is easy to synchronise your JupyterLab instanc
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="On-your-own-device">On your own device<a class="anchor-link" href="#On-your-own-device">¶</a></h4><p>All the materials can be access outside of JupyterLab as well. The repository with the course materials can be found <a href="https://github.com/tilmantroester/bayesian_statistical_methods/tree/fs2023">on github</a>.</p>
+<h4 id="On-your-own-device">On your own device<a class="anchor-link" href="#On-your-own-device">¶</a></h4><p>All the materials can be access outside of JupyterLab as well. The repository with the course materials can be found <a href="https://github.com/tilmantroester/bayesian_statistical_methods/tree/hs24">on github</a>.</p>
 <p>To set up your own computing environment I strongly recommend anaconda. Either using <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> or the much faster <a href="https://mamba.readthedocs.io/en/latest/installation.html#install-script">mamba</a> implementation.</p>
 </div>
 </div>
@@ -7836,57 +7978,6 @@ If you set up version control, it is easy to synchronise your JupyterLab instanc
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h3><ol>
-<li>Create a new directory at the top of the JupyterLab file system</li>
-<li>Create a new Python notebook</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="3">
-<li>Obtain an estimate of the value of $\pi$<ul>
-<li>From the definition in <code>numpy</code></li>
-<li>Using an analytic series expansion: $\pi = 4 \sum_{k=0}^\infty \frac{(-1)^{k}}{2k + 1}$</li>
-<li>Using a Monte-Carlo estimate:<ol>
-<li>Sample $n$ points uniformly on the unit square using <code>numpy.random.uniform</code></li>
-<li>Count the number $n_{&lt;r}$ of points with distance $r = \sqrt{x^2+y^2} \leq 1$</li>
-<li>Compare the fraction $\frac{n_{&lt;r}}{n}$ to the ratio of the area of a quadrant of a disc to the area of the square to derive an estimate of $\pi$</li>
-</ol>
-</li>
-<li>Bonus: Repeat for (hyper) cube and (hyper) ball in 3 or more dimensions. How does the number of samples required to get a robust estimate of $\pi$ change with the number of dimensions?</li>
-</ul>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="4">
-<li><p>Use the debugger to step through some iterations of your code.</p>
-</li>
-<li><p>Create plots showing the estimated value as the number of terms in the series expansion and the number of Monte-Carlo samples is varied</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Your-python-package">Your python package<a class="anchor-link" href="#Your-python-package">¶</a></h2><p>The goal of this course is for you to build a toolbox with statistical and computational methods that you can use in your future data analyses.</p>
 <p>For that toolbox to be useful it needs to contain reusable code. Notebooks are great for quick development and data exploration but terrible for reusable and maintainable code.
 As soon as you think about copy &amp; pasting some piece of code from one notebook to another (or within the same notebook), you should instead consider putting that piece of code into your toolbox.</p>
@@ -7938,7 +8029,58 @@ As soon as you think about copy &amp; pasting some piece of code from one notebo
 </div>
 </div>
 </div>
-</div></section></section>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h3><ol>
+<li>Create a new directory at the top of the JupyterLab file system</li>
+<li>Create a new Python notebook</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="3">
+<li>Obtain an estimate of the value of $\pi$<ul>
+<li>From the definition in <code>numpy</code></li>
+<li>Using an analytic series expansion: $\pi = 4 \sum_{k=0}^\infty \frac{(-1)^{k}}{2k + 1}$</li>
+<li>Using a Monte-Carlo estimate:<ol>
+<li>Sample $n$ points uniformly on the unit square using <code>numpy.random.uniform</code></li>
+<li>Count the number $n_{&lt;r}$ of points with distance $r = \sqrt{x^2+y^2} \leq 1$</li>
+<li>Compare the fraction $\frac{n_{&lt;r}}{n}$ to the ratio of the area of a quadrant of a disc to the area of the square to derive an estimate of $\pi$</li>
+</ol>
+</li>
+<li>Bonus: Repeat for (hyper) cube and (hyper) ball in 3 or more dimensions. How does the number of samples required to get a robust estimate of $\pi$ change with the number of dimensions?</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="4">
+<li><p>Use the debugger to step through some iterations of your code.</p>
+</li>
+<li><p>Create plots showing the estimated value as the number of terms in the series expansion and the number of Monte-Carlo samples is varied</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div></section></section>
 </div>
 </div>
 </main>
